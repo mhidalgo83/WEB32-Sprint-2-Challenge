@@ -1,7 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import { getSmurfs } from "../store/actions";
+
+const Card = styled.div`
+    border: solid black 1px;
+    width: 50%;
+    margin: 1% auto;
+    background: lightblue;
+
+`
 
 const Smurfs = () => {
   const { smurfs } = useSelector((state) => state);
@@ -15,11 +24,11 @@ const Smurfs = () => {
     <div>
       <h1>Here are the Smurfs!!</h1>
         {smurfs.map((smurf) => (
-          <div key={smurf.id}>
+          <Card key={smurf.id}>
             <p>Name: {smurf.name}</p>
             <p>Age: {smurf.age}</p>
             <p>Height: {smurf.height}</p>
-          </div>
+          </Card>
         ))}
     </div>
   );
