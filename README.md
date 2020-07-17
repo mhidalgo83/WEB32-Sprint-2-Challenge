@@ -25,11 +25,20 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
-2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
-4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-5. What is your favorite state management system you've learned and this sprint? Please explain why!
+  The Context API is a state management system baked into React (instead of 3rd party solutions like Redux). Context lets you share state across components would normally have to be shared through prop drilling.
 
+2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  An action is an object sent by a function that contains a type (which describes what type of action the action is) and a payload (any data associated with that action). A reducer is a pure function that takes in an argument and returns predictable every time. Both actions and reducers are used to maintain predictable state in Redux. The store in Redux is where our state, reducers, and actions are found and implemented.
+
+3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  Application state is state that is used throughout the entire application. An example of that would be a logged in user, and whatever data that might be associated with that user. The application knowing what type of user is logged could limit or enhance what types of features that they would have access to. Component state is state that is isolated to just the component that it is in, and is not shared across the application. An example of that would be a form input.
+
+4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+  Redux thunk is a Redux middleware that allows us to perform asynchronous actions in our action creators. Using thunk, our action creator returns dispatch and then executes async javascript inside that return.
+
+5. What is your favorite state management system you've learned and this sprint? Please explain why!
+  I prefer Redux. I like having global state separated from our components, as I think it is cleaner, more readable code. I also like that it is predictable.
+  
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
