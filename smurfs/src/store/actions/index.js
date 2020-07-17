@@ -24,3 +24,15 @@ export const getSmurfs = () => (dispatch) => {
 };
 
 //POST request for smurfs
+export const createSmurf = (smurf) => (dispatch) => {
+  dispatch({ type: CREATE_SMURF_START });
+  axios
+    .post("http://localhost:3333/smurfs", smurf)
+    .then((res) => {
+      dispatch({ type: CREATE_SMURF_SUCCESS, payload: res.data });
+      
+    })
+    .catch((err) => {
+      dispatch({ type: CREATE_SMURF_FAILURE, payload: err.message });
+    });
+};
