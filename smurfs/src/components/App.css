@@ -1,3 +1,6 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: repeat(2, 100%);
+  grid-template-columns: repeat(2, 50%);
 }
